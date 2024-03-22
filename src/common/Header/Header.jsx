@@ -8,7 +8,7 @@ export const Header = () => {
     return (
         <div className="headerDesign">
             <Navigator title={"Home"} destination={"/"} />
-            <Navigator title={"register"} destination={"/register"} />
+            <Navigator title={"Register"} destination={"/register"} />
         </div>
     )
 }
