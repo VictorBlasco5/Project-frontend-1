@@ -9,3 +9,9 @@
     align-items: center;
     justify-content: center;
 }
+
+.error {
+    height: 1em;
+    color: darkred;
+}
+
