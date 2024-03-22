@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { CInput } from "../../common/CInput/CInput"
 import "./Register.css"
+import { CButton } from "../../common/CButton/CButton"
 
 
 export const Register = () => {
@@ -23,9 +24,13 @@ export const Register = () => {
         )
     }
 
+    const registerMe = () => {
+   
+    }
+
     return (
         <div className="registerDesign">
-           
+
             <CInput
                 className={"inputDesign"}
                 placeholder={"First name"}
@@ -57,6 +62,11 @@ export const Register = () => {
                 name={"password_hash"}
                 value={user.password_hash || ""}
                 onChangeFunction={(e) => imputHandler(e)}
+            />
+            <CButton
+                className={"cButtonDesign"}
+                title={"Register"}
+                functionEmit={registerMe}
             />
         </div>
     )
