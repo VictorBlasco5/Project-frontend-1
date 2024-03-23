@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { CButton } from "../../common/CButton/CButton"
 import { CInput } from "../../common/CInput/CInput"
 import { validation } from "../../utils/functions";
@@ -8,8 +8,9 @@ import { useNavigate } from "react-router-dom";
 import { decodeToken } from "react-jwt"
 
 export const Login = () => {
-
+    const datosUser = JSON.parse(localStorage.getItem("auth"));
     const navigate = useNavigate();
+    const [tokenStorage, setTokenStorage] = useState(datosUser?.token);
 
     const [accreditation, setAccreditation] = useState({
         email:"",
@@ -23,6 +24,11 @@ export const Login = () => {
 
     const [msgError, setMsgError] = useState("");
 
+    useEffect(() => {
+      if (tokenStorage) {
+        navigate("/");
+      }
+    }, [tokenStorage]);
 
   const inputHandler = (e) => {
     setAccreditation((prevState) => ({
@@ -63,7 +69,7 @@ export const Login = () => {
     
             localStorage.setItem("auth", JSON.stringify(auth))
     
-            setMsgError(`Wellcome`)
+            setMsgError(`Wellcome ${decoded.firstName}`)
     
             setTimeout(()=>{
               navigate("/")
