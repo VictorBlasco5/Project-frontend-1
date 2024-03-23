@@ -54,7 +54,7 @@ export const Register = () => {
             for (let elemento in user) {
                 if (user[elemento] === "") {
                     throw new Error("All fields must be completed");
-                }completos
+                }
             }
 
             setMsgError("")

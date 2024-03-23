@@ -40,6 +40,8 @@ export const LoginUser = async (accreditation) => {
         const response = await fetch(`${root}auth/login`, options);
     
         const data = await response.json();
+        console.log("data de llamda a DB");
+        console.log(data)
     
         if (!data.success) {
           throw new Error(data.message);
