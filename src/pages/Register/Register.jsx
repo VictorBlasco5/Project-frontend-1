@@ -3,23 +3,26 @@ import { CInput } from "../../common/CInput/CInput"
 import "./Register.css"
 import { CButton } from "../../common/CButton/CButton";
 import { RegisterUser } from "../../services/apiCalls";
-import { validame } from "../../utils/functions";
+import { validation } from "../../utils/functions";
+import { useNavigate } from "react-router-dom";
 
 
 export const Register = () => {
 
+    const navigate = useNavigate()
+
     const [user, setUser] = useState({
-        firstName: "",
-        lastName: "",
+        first_name: "",
+        last_name: "",
         email: "",
-        passwordHash: ""
+        password_hash: ""
     })
 
     const [userError, setUserError] = useState({
-        firstNameError: "",
-        lastNameError: "",
+        first_nameError: "",
+        last_nameError: "",
         emailError: "",
-        passwordHashError: ""
+        password_hashError: ""
     })
 
     const [msgError, setMsgError] = useState("")
@@ -35,7 +38,7 @@ export const Register = () => {
     }
 
     const checkError = (e) => {
-        const error = validame(e.target.name, e.target.value)
+        const error = validation(e.target.name, e.target.value)
         // console.log(`estoy en ${e.target.name} y voy a comprobar si ${e.target.value} es valido`)
 
         setUserError((prevState) => ({
@@ -56,9 +59,14 @@ export const Register = () => {
 
             setMsgError("")
 
-            const fetched = await RegisterUser();
+            const fetched = await RegisterUser(user);
 
             console.log(fetched);
+            setMsgError(fetched.message)
+
+            setTimeout(()=>{
+                navigate("/")
+            },1200)
 
         } catch (error) {
             setMsgError(error.message);
@@ -70,25 +78,25 @@ export const Register = () => {
         <div className="registerDesign">
 
             <CInput
-                className={`inputDesign ${userError.firstNameError !== "" ? "inputDesignError" : ""}`}
+                className={`inputDesign ${userError.first_nameError !== "" ? "inputDesignError" : ""}`}
                 placeholder={"First name"}
                 type={"text"}
-                name={"firstName"}
-                value={user.firstName || ""}
+                name={"first_name"}
+                value={user.first_name || ""}
                 onChangeFunction={(e) => imputHandler(e)}
                 onBlurFunction={(e) => checkError(e)}
             />
-            <div className="error">{userError.firstNameError}</div>
+            <div className="error">{userError.first_nameError}</div>
             <CInput
-                className={`inputDesign ${userError.lastNameError !== "" ? "inputDesignError" : ""}`}
+                className={`inputDesign ${userError.last_nameError !== "" ? "inputDesignError" : ""}`}
                 placeholder={"Last name"}
                 type={"text"}
-                name={"lastName"}
-                value={user.lastName || ""}
+                name={"last_name"}
+                value={user.last_name || ""}
                 onChangeFunction={(e) => imputHandler(e)}
                 onBlurFunction={(e) => checkError(e)}
             />
-           <div className="error">{userError.lastNameError}</div>
+           <div className="error">{userError.last_nameError}</div>
             <CInput
                 className={`inputDesign ${userError.emailError !== "" ? "inputDesignError" : ""}`}
                 placeholder={"Email"}
@@ -100,15 +108,15 @@ export const Register = () => {
             />
             <div className="error">{userError.emailError}</div>
             <CInput
-                className={`inputDesign ${userError.passwordHashError !== "" ? "inputDesignError" : ""}`}
+                className={`inputDesign ${userError.password_hashError !== "" ? "inputDesignError" : ""}`}
                 placeholder={"Password"}
                 type={"password"}
-                name={"passwordHash"}
-                value={user.passwordHash || ""}
+                name={"password_hash"}
+                value={user.password_hash || ""}
                 onChangeFunction={(e) => imputHandler(e)}
                 onBlurFunction={(e) => checkError(e)}
             />
-            <div className="error">{userError.passwordHashError}</div>
+            <div className="error">{userError.password_hashError}</div>
             <CButton
                 className={"cButtonDesign"}
                 title={"Register"}

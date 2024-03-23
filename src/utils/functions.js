@@ -1,4 +1,4 @@
-export const validame = (type, value) => {
+export const validation = (type, value) => {
 
 
     switch (type) {
@@ -30,9 +30,9 @@ export const validame = (type, value) => {
         case "passwordHash":
         case "password":
 
-        const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{6,10}$/;
+        const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{7,12}$/;
         if (!passwordRegex.test(value)) {
-          return "Must contain between 6 and 10 characters, one lower case, one upper case and numbers.";
+          return "Must contain between 7 and 12 characters, one lower case, one upper case and numbers.";
         }
   
         return "";
