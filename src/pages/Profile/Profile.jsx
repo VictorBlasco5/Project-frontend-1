@@ -9,6 +9,7 @@ const datosUser = JSON.parse(localStorage.getItem("auth"))
 export const Profile = () => {
     const navigate = useNavigate()
     const [tokenStorage, setTokenStorage] = useState(datosUser?.token)
+    const [loadedData, setLoadedData] = useState(false)
     const [user, setUser] = useState({
         first_name: "",
         last_name: "",
@@ -45,23 +46,29 @@ export const Profile = () => {
 
                 const fetched = await GetProfile(tokenStorage)
 
+                setLoadedData(true)
+
                 setUser({
                     first_name: fetched.data.first_name,
                     last_name: fetched.data.last_name,
                     email: fetched.data.email,
                 })
 
+
             } catch (error) {
                 console.log(error)
             }
         }
 
-        getUserProfile()
+        if(!loadedData){ 
+            getUserProfile()
+        }
+
     }, [user])
 
     return <div className='profileDesign'>
         {
-            user.email === ""
+            !loadedData
                 ? (<div>LOADING</div>)
 
                 : (<div>
