@@ -5,6 +5,7 @@ import { CButton } from "../../common/CButton/CButton";
 import { RegisterUser } from "../../services/apiCalls";
 import { validation } from "../../utils/functions";
 import { useNavigate } from "react-router-dom";
+import { Header } from "../../common/Header/Header";
 
 
 export const Register = () => {
@@ -43,7 +44,7 @@ export const Register = () => {
 
         setUserError((prevState) => ({
             ...prevState,
-            [e.target.name + "Error"] : error,
+            [e.target.name + "Error"]: error,
         }))
     }
 
@@ -64,9 +65,9 @@ export const Register = () => {
             console.log(fetched);
             setMsgError(fetched.message)
 
-            setTimeout(()=>{
+            setTimeout(() => {
                 navigate("/")
-            },1200)
+            }, 1200)
 
         } catch (error) {
             setMsgError(error.message);
@@ -75,54 +76,57 @@ export const Register = () => {
 
 
     return (
-        <div className="registerDesign">
+        <>
+            <Header />
+            <div className="registerDesign">
 
-            <CInput
-                className={`inputDesign ${userError.first_nameError !== "" ? "inputDesignError" : ""}`}
-                placeholder={"First name"}
-                type={"text"}
-                name={"first_name"}
-                value={user.first_name || ""}
-                onChangeFunction={(e) => imputHandler(e)}
-                onBlurFunction={(e) => checkError(e)}
-            />
-            <div className="error">{userError.first_nameError}</div>
-            <CInput
-                className={`inputDesign ${userError.last_nameError !== "" ? "inputDesignError" : ""}`}
-                placeholder={"Last name"}
-                type={"text"}
-                name={"last_name"}
-                value={user.last_name || ""}
-                onChangeFunction={(e) => imputHandler(e)}
-                onBlurFunction={(e) => checkError(e)}
-            />
-           <div className="error">{userError.last_nameError}</div>
-            <CInput
-                className={`inputDesign ${userError.emailError !== "" ? "inputDesignError" : ""}`}
-                placeholder={"Email"}
-                type={"email"}
-                name={"email"}
-                value={user.email || ""}
-                onChangeFunction={(e) => imputHandler(e)}
-                onBlurFunction={(e) => checkError(e)}
-            />
-            <div className="error">{userError.emailError}</div>
-            <CInput
-                className={`inputDesign ${userError.password_hashError !== "" ? "inputDesignError" : ""}`}
-                placeholder={"Password"}
-                type={"password"}
-                name={"password_hash"}
-                value={user.password_hash || ""}
-                onChangeFunction={(e) => imputHandler(e)}
-                onBlurFunction={(e) => checkError(e)}
-            />
-            <div className="error">{userError.password_hashError}</div>
-            <CButton
-                className={"cButtonDesign"}
-                title={"Register"}
-                functionEmit={registerMe}
-            />
-            <div className="error">{msgError} </ div>
-        </div>
+                <CInput
+                    className={`inputDesign ${userError.first_nameError !== "" ? "inputDesignError" : ""}`}
+                    placeholder={"First name"}
+                    type={"text"}
+                    name={"first_name"}
+                    value={user.first_name || ""}
+                    onChangeFunction={(e) => imputHandler(e)}
+                    onBlurFunction={(e) => checkError(e)}
+                />
+                <div className="error">{userError.first_nameError}</div>
+                <CInput
+                    className={`inputDesign ${userError.last_nameError !== "" ? "inputDesignError" : ""}`}
+                    placeholder={"Last name"}
+                    type={"text"}
+                    name={"last_name"}
+                    value={user.last_name || ""}
+                    onChangeFunction={(e) => imputHandler(e)}
+                    onBlurFunction={(e) => checkError(e)}
+                />
+                <div className="error">{userError.last_nameError}</div>
+                <CInput
+                    className={`inputDesign ${userError.emailError !== "" ? "inputDesignError" : ""}`}
+                    placeholder={"Email"}
+                    type={"email"}
+                    name={"email"}
+                    value={user.email || ""}
+                    onChangeFunction={(e) => imputHandler(e)}
+                    onBlurFunction={(e) => checkError(e)}
+                />
+                <div className="error">{userError.emailError}</div>
+                <CInput
+                    className={`inputDesign ${userError.password_hashError !== "" ? "inputDesignError" : ""}`}
+                    placeholder={"Password"}
+                    type={"password"}
+                    name={"password_hash"}
+                    value={user.password_hash || ""}
+                    onChangeFunction={(e) => imputHandler(e)}
+                    onBlurFunction={(e) => checkError(e)}
+                />
+                <div className="error">{userError.password_hashError}</div>
+                <CButton
+                    className={"cButtonDesign"}
+                    title={"Register"}
+                    functionEmit={registerMe}
+                />
+                <div className="error">{msgError} </ div>
+            </div>
+        </>
     )
 }
