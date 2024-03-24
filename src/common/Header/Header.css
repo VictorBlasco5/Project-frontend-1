@@ -10,3 +10,8 @@
     align-items: flex-end;
 
 }
+
+.navBar {
+    display: flex;
+    flex-direction: row;
+}

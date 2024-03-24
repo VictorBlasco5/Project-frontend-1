@@ -3,10 +3,11 @@ import { useNavigate } from "react-router";
 import "./Profile.css";
 import { GetProfile } from "../../services/apiCalls";
 import { CInput } from "../../common/CInput/CInput";
+import { Header } from "../../common/Header/Header";
 
-const datosUser = JSON.parse(localStorage.getItem("auth"))
 
 export const Profile = () => {
+    const datosUser = JSON.parse(localStorage.getItem("auth"))
     const navigate = useNavigate()
     const [tokenStorage, setTokenStorage] = useState(datosUser?.token)
     const [loadedData, setLoadedData] = useState(false)
@@ -60,50 +61,55 @@ export const Profile = () => {
             }
         }
 
-        if(!loadedData){ 
+        if (!loadedData) {
             getUserProfile()
         }
 
     }, [user])
 
-    return <div className='profileDesign'>
-        {
-            !loadedData
-                ? (<div>LOADING</div>)
+    return (
+        <>
+            <Header />
+            <div className='profileDesign'>
+                {
+                    !loadedData
+                        ? (<div>LOADING</div>)
 
-                : (<div>
-                    <CInput
-                        className={`inputDesign ${userError.first_nameError !== "" ? "inputDesignError" : ""}`}
-                        type={"text"}
-                        placeholder={""}
-                        name={"first_name"}
-                        value={user.first_name || ""}
-                        onChangeFunction={(e) => inputHandler(e)}
-                        onBlurFunction={(e) => checkError(e)}
-                    />
-                    <CInput
-                        className={`inputDesign ${userError.last_nameError !== "" ? "inputDesignError" : ""}`}
-                        type={"text"}
-                        placeholder={""}
-                        name={"last_name"}
-                        value={user.last_name || ""}
-                        onChangeFunction={(e) => inputHandler(e)}
-                        onBlurFunction={(e) => checkError(e)}
-                    />
-                      <CInput
-                        className={`inputDesign ${userError.emailError !== "" ? "inputDesignError" : ""}`}
-                        type={"email"}
-                        placeholder={""}
-                        name={"email"}
-                        value={user.email || ""}
-                        onChangeFunction={(e) => inputHandler(e)}
-                        onBlurFunction={(e) => checkError(e)}
-                    />
+                        : (<div>
+                            <CInput
+                                className={`inputDesign ${userError.first_nameError !== "" ? "inputDesignError" : ""}`}
+                                type={"text"}
+                                placeholder={""}
+                                name={"first_name"}
+                                value={user.first_name || ""}
+                                onChangeFunction={(e) => inputHandler(e)}
+                                onBlurFunction={(e) => checkError(e)}
+                            />
+                            <CInput
+                                className={`inputDesign ${userError.last_nameError !== "" ? "inputDesignError" : ""}`}
+                                type={"text"}
+                                placeholder={""}
+                                name={"last_name"}
+                                value={user.last_name || ""}
+                                onChangeFunction={(e) => inputHandler(e)}
+                                onBlurFunction={(e) => checkError(e)}
+                            />
+                            <CInput
+                                className={`inputDesign ${userError.emailError !== "" ? "inputDesignError" : ""}`}
+                                type={"email"}
+                                placeholder={""}
+                                name={"email"}
+                                value={user.email || ""}
+                                onChangeFunction={(e) => inputHandler(e)}
+                                onBlurFunction={(e) => checkError(e)}
+                            />
 
-                </div>)
+                        </div>)
 
-        }
+                }
 
-    </div>
+            </div>
+        </>
+    )
 
 }
