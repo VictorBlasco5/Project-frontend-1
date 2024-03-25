@@ -88,7 +88,7 @@ export const Login = () => {
         <CInput
           className={`inputDesign ${accreditationError.emailError !== "" ? "inputDesignError" : ""}`}
           type={"email"}
-          placeholder={"email"}
+          placeholder={"Email"}
           name={"email"}
           value={accreditation.email || ""}
           disabled={""}

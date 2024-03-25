@@ -13,16 +13,26 @@ export const Header = () => {
 
     }
 
+    const appointments = () => {
+
+        navigate("/appointments")
+    }
+
     return (
         <div className="headerDesign">
             <Navigator title={"Home"} destination={"/"} />
 
             {auth?.token ? (
                 <div className="navBar">
+    
                     <Navigator title={auth?.decoded?.firstName} destination={"/profile"} />
+                    <div
+                        onClick={appointments}> <Navigator title={"Appointments"} destination={"/appointments"} />
+                    </div>
                     <div
                         onClick={logOut}> <Navigator title={"Log out"} destination={"/"} />
                     </div>
+                    
                 </div>
             ) : (
                 <div className="navBar">
