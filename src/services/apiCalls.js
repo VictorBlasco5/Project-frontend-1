@@ -67,7 +67,33 @@ export const GetProfile = async (token) => {
       const response = await fetch(`${root}users/profile`, options);
   
       const data = await response.json();
-      console.log("data de llamda a DB");
+  
+      if (!data.success) {
+        throw new Error(data.message);
+      }
+  
+      return data;
+    } catch (error) {
+      return error;
+    }
+}
+
+export const UpdateProfile = async (token, data) => {
+
+  const options = {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${token}`
+      },
+      body: JSON.stringify(data)
+    };
+  
+    try {
+      const response = await fetch(`${root}users/profile`, options);
+  
+      const data = await response.json();
+      console.log("datos");
       console.log(data)
   
       if (!data.success) {

@@ -91,6 +91,7 @@ export const Login = () => {
           placeholder={"email"}
           name={"email"}
           value={accreditation.email || ""}
+          disabled={""}
           onChangeFunction={(e) => inputHandler(e)}
           onBlurFunction={(e) => checkError(e)}
         />
@@ -101,6 +102,7 @@ export const Login = () => {
           placeholder={"Password"}
           name={"password_hash"}
           value={accreditation.password_hash || ""}
+          disabled={""}
           onChangeFunction={(e) => inputHandler(e)}
           onBlurFunction={(e) => checkError(e)}
         />
