@@ -27,8 +27,8 @@ export const Appointments = () => {
                 const fetched = await GetAppointments(tokenStorage)
                 setAppointments(fetched.data.appointment)
                 setLoadedData(true)
-                console.log(fetched.data)
-                console.log(appointments)
+                // console.log(fetched.data)
+                // console.log(appointments)
 
             } catch (error) {
                 console.log(error);
