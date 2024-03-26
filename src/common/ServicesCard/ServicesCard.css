@@ -1,0 +1,17 @@
+.servicesCardDesign {
+
+    height: 4.3em;
+    width: 55em;
+
+    background-color: lightgrey;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    
+
+    border-radius: 0.5em;
+    border: 0.1em solid black;
+    margin: 1.5em;
+
+}
