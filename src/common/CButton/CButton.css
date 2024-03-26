@@ -21,3 +21,21 @@
     background-color: gray;
 
 }
+
+.cButtonDesignAppointments {
+    height: 3em;
+    width: 13em;
+    margin: 5em;
+
+    border-radius: 0.5em;
+
+    background-color: darkgrey;
+    color: white;
+    font-weight: bold;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 2.6em;
+}
