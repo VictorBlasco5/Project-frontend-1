@@ -130,3 +130,28 @@ export const GetAppointments = async (token) => {
       return error;
     }
 }
+
+export const GetServices = async (services) => {
+
+  const options = {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      services
+    };
+  
+    try {
+      const response = await fetch(`${root}services`, options);
+  
+      const data = await response.json();
+  
+      if (!data.success) {
+        throw new Error(data.message);
+      }
+  
+      return data;
+    } catch (error) {
+      return error;
+    }
+}

@@ -26,3 +26,16 @@
     
     margin-top: 3em;
 }
+
+.inputDesignServices {
+    height: 5em;
+    width: 30em;
+
+    border: 0.1em solid black;
+    border-radius: 0.3em;
+    margin: 1em;
+
+    display: flex;
+    flex-direction: column;
+    
+}
