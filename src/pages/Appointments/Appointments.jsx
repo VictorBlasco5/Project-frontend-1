@@ -81,7 +81,7 @@ export const Appointments = () => {
                     <CInput
                         className={"imputAppointmentsDesign"}
                         type={"text"}
-                        placeholder={""}
+                        placeholder={"Service number"}
                         name={"service_id"}
                         value={appointmentsData.service_id || ""}
                         disabled={""}

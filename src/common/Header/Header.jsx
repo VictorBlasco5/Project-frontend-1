@@ -18,6 +18,10 @@ export const Header = () => {
         navigate("/appointments")
     }
 
+    const admin = () => {
+        navigate("/admin")
+    }
+
     return (
         <div className="headerDesign">
             <Navigator title={"Home"} destination={"/"} />
@@ -29,10 +33,17 @@ export const Header = () => {
                     <div
                         onClick={appointments}> <Navigator title={"Appointments"} destination={"/appointments"} />
                     </div>
+                    {auth?.token && auth?.decoded?.roleName === "admin"
+                        ? (
+                            <div
+                                onClick={admin}> <Navigator title={"Admin"} destination={"/admin"} />
+                            </div>
+                        ) : (
+                            <div></div>
+                        )}
                     <div
                         onClick={logOut}> <Navigator title={"Log out"} destination={"/"} />
                     </div>
-                    
                 </div>
             ) : (
                 <div className="navBar">
