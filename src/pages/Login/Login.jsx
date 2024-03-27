@@ -56,12 +56,12 @@ export const Login = () => {
       }
 
       const fetched = await LoginUser(accreditation);
-      console.log("fetched");
-      console.log(fetched);
+      // console.log("fetched");
+      // console.log(fetched);
 
       const decoded = decodeToken(fetched.token)
-      console.log("decoded");
-      console.log(decoded);
+      // console.log("decoded");
+      // console.log(decoded);
 
       const auth = {
         token: fetched.token,

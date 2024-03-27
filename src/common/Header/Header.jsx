@@ -33,7 +33,7 @@ export const Header = () => {
                     <div
                         onClick={appointments}> <Navigator title={"Appointments"} destination={"/appointments"} />
                     </div>
-                    {auth?.token && auth?.decoded?.roleName === "admin"
+                    {auth?.token && auth?.decoded?.roleName === "super_admin"
                         ? (
                             <div
                                 onClick={admin}> <Navigator title={"Admin"} destination={"/admin"} />

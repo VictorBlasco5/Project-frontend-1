@@ -75,7 +75,7 @@ export const Profile = () => {
 
             setChange("disabled")
 
-            console.log(fetched);
+            // console.log(fetched);
         } catch (error) {
             console.log(error);
         }
