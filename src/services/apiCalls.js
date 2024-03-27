@@ -156,14 +156,14 @@ export const GetServices = async (services) => {
     }
 }
 
-export const CreateServices = async (services) => {
+export const CreateAppointment = async (token, appointmentsData) => {
   const options = {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
       "Authorization": `Bearer ${token}`
     },
-    body: JSON.stringify(data)
+    body: JSON.stringify(appointmentsData)
   };
 
   try {

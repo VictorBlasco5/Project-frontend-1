@@ -1,14 +1,15 @@
 import { useState, useEffect } from "react";
 import "./Appointments.css"
 import { Header } from "../../common/Header/Header";
-import { GetAppointments } from "../../services/apiCalls";
+import { CreateAppointment, GetAppointments } from "../../services/apiCalls";
 import { CInput } from "../../common/CInput/CInput";
 import { CButton } from "../../common/CButton/CButton";
 import { AppointmentCard } from "../../common/AppointmentCard/AppointmentCard";
 
 
 export const Appointments = () => {
-    // const [change, setChange] = useState("disable")
+
+    // const [dropdown, setDropdown] = useState(false)
     const datosUser = JSON.parse(localStorage.getItem("auth"))
     const [tokenStorage, setTokenStorage] = useState(datosUser?.token)
     const [loadedData, setLoadedData] = useState(false)
@@ -17,9 +18,14 @@ export const Appointments = () => {
         appointment_date: "",
         service_id: ""
     })
+    const appointmentInputHandler = (e) => {
+        setAppointmentsData((prevState) => ({
+            ...prevState,
+            [e.target.name]: e.target.value,
+        }));
+    };
 
     useEffect(() => {
-
 
         const getData = async () => {
             try {
@@ -40,6 +46,23 @@ export const Appointments = () => {
     }, [appointments])
 
 
+    // const selectOption = (e) => {
+    //     setDropdown(e.target.value)
+    // }
+
+
+    const newAppointment = async () => {
+        try {
+
+            const create = await CreateAppointment(tokenStorage, appointmentsData)
+
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+
+
     return (
         <>
             <Header />
@@ -51,21 +74,37 @@ export const Appointments = () => {
                         type={"date"}
                         placeholder={""}
                         name={"appointment_date"}
-                        // value={""}
+                        value={appointmentsData.appointment_date || ""}
                         disabled={""}
+                        onChangeFunction={(e) => appointmentInputHandler(e)}
                     />
                     <CInput
                         className={"imputAppointmentsDesign"}
                         type={"text"}
                         placeholder={""}
                         name={"service_id"}
-                        // value={""}
+                        value={appointmentsData.service_id || ""}
                         disabled={""}
+                        onChangeFunction={(e) => appointmentInputHandler(e)}
                     />
+
+                    {/* intento de meterlo en un dropdown */}
+
+                    {/* <div className={"imputAppointmentsDesign"}>
+                        <select value={dropdown} onChange={selectOption}>
+                            <option value="">Select service</option>
+                            <option value={appointmentsData.service_id}>Personalized tattoo</option>
+                            <option value="opcion1">Tattoos from the catalog</option>
+                            <option value="opcion2">Restoration and rejuvenation work</option>
+                            <option value="opcion3">Placement of piercings and dilators</option>
+                            <option value="opcion3">Sales of piercings and other items</option>
+                        </select>
+                    </div> */}
+
                     <CButton
                         className={"cButtonDesignAppointments"}
-                        title={"Pedir cita"}
-                    // functionEmit={}
+                        title={"New appointment"}
+                        functionEmit={newAppointment}
                     />
                 </div>
 

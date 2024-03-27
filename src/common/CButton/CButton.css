@@ -39,3 +39,8 @@
     flex-direction: column;
     margin-top: 2.6em;
 }
+
+.cButtonDesignAppointments:hover {
+    cursor: pointer;
+    background-color: grey;
+}
