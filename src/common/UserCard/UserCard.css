@@ -1,0 +1,32 @@
+.userCardDesign {
+
+    height: 2em;
+    width: 15em;
+
+    background-color: lightgrey;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    border-radius: 0.5em;
+    /* border: 0.1em solid black; */
+
+    font-size: 1em;
+}
+
+.card {
+    height: 6em;
+    width: 15em;
+
+    background-color: lightgrey;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    border-radius: 0.5em;
+    border: 0.1em solid black;
+    margin: 1em;
+}

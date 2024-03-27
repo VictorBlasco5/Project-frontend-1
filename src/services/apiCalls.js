@@ -183,7 +183,7 @@ export const CreateAppointment = async (token, appointmentsData) => {
   }
 }
 
-export const GetUsers = async (users) => {
+export const GetUsers = async (token) => {
 
   const options = {
       method: "GET",
