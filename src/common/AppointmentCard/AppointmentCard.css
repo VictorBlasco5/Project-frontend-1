@@ -1,13 +1,13 @@
 .appointmentCardDesign {
 
-    height: 5em;
+    height: 4em;
     width: 20em;
 
     background-color: lightgrey;
 
     display: flex;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
     
 
     border-radius: 0.5em;
