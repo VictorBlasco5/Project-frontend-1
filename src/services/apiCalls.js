@@ -207,7 +207,7 @@ export const GetUsers = async (token) => {
     }
 }
 
-export const DeleteUsers = async (token, userId) => {
+export const DeleteUsers = async (userId, token ) => {
 
   const options = {
     method: "DELETE",
