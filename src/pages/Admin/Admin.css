@@ -5,9 +5,13 @@
     background-color: rosybrown;
 
     display: flex;
+    overflow-y: auto;
+    justify-content: center;
     flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-    
+}
+
+.positionCards {
+    display: flex;
     flex-wrap: wrap;
+    margin: 1em;
 }

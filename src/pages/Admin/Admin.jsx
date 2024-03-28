@@ -30,9 +30,9 @@ export const Admin = () => {
             <Header />
             <div className="adminDesign">
                 {users.length > 0 ? (
-                    <div>
+                    <div className="positionCards">
                         {
-                            users.slice(0, 10).map(
+                            users.slice(0, 100).map(
                                 user => {
                                     return (
                                         <UserCard
