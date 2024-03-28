@@ -13,13 +13,14 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+
+    user-select: none;
 }
 
 .cButtonDesign:hover {
     cursor: pointer;
     transition: 0.2s;
     background-color: gray;
-
 }
 
 .cButtonDesignAppointments {
@@ -29,7 +30,7 @@
 
     border-radius: 0.5em;
 
-    background-color: darkgrey;
+    background-color: lightgrey;
     color: white;
     font-weight: bold;
 
@@ -38,9 +39,34 @@
     align-items: center;
     flex-direction: column;
     margin-top: 2.6em;
+
+    user-select: none;
+    
 }
 
 .cButtonDesignAppointments:hover {
     cursor: pointer;
     background-color: grey;
+}
+
+.CButtonDesignCardUser {
+    height: 2.5em;
+    width: 12em;
+
+    margin: 1em;
+    margin-left: 0.6em;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    border-radius: 0.5em;
+
+    background-color: white;
+}
+
+.CButtonDesignCardUser:hover {
+    cursor: pointer;
+    background-color: rgb(212, 63, 63);
+    user-select: none;
 }

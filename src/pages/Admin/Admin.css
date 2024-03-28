@@ -1,0 +1,17 @@
+.adminDesign {
+    height: 88vh;
+    width: 100vw;
+
+    background-color: rosybrown;
+
+    display: flex;
+    overflow-y: auto;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.positionCards {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 1em;
+}

@@ -138,7 +138,6 @@ export const GetServices = async (services) => {
       headers: {
         "Content-Type": "application/json",
       },
-      services
     };
   
     try {
@@ -172,6 +171,56 @@ export const CreateAppointment = async (token, appointmentsData) => {
     const data = await response.json();
     console.log("datos");
     console.log(data)
+
+    if (!data.success) {
+      throw new Error(data.message);
+    }
+
+    return data;
+  } catch (error) {
+    return error;
+  }
+}
+
+export const GetUsers = async (token) => {
+
+  const options = {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${token}`
+      },
+    };
+  
+    try {
+      const response = await fetch(`${root}users`, options);
+  
+      const data = await response.json();
+  
+      if (!data.success) {
+        throw new Error(data.message);
+      }
+  
+      return data;
+    } catch (error) {
+      return error;
+    }
+}
+
+export const DeleteUsers = async (userId, token ) => {
+
+  const options = {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+      "Authorization": `Bearer ${token}`
+    },
+  };
+
+  try {
+    const response = await fetch(`${root}users/${userId}`, options);
+
+    const data = await response.json();
 
     if (!data.success) {
       throw new Error(data.message);

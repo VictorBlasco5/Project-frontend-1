@@ -15,7 +15,7 @@ export const Home = () => {
                     const fetched = await GetServices()
 
                     setServices(fetched.data)
-                    console.log(fetched.data);
+                    // console.log(fetched.data);
 
                 } catch (error) {
                     console.log(error);
