@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import "./Appointments.css"
 import { Header } from "../../common/Header/Header";
-import { CreateAppointment, GetAppointments } from "../../services/apiCalls";
+import { CreateAppointment, DeleteAppointments, GetAppointments } from "../../services/apiCalls";
 import { CInput } from "../../common/CInput/CInput";
 import { CButton } from "../../common/CButton/CButton";
 import { AppointmentCard } from "../../common/AppointmentCard/AppointmentCard";
@@ -61,6 +61,15 @@ export const Appointments = () => {
         }
     }
 
+    const appointmentRemove = async (appointment) => {
+        try {
+        const fetched = await DeleteAppointments(appointment, tokenStorage)
+        } catch (error) {
+            console.log(error)
+        }
+       
+    }
+
 
 
     return (
@@ -114,10 +123,19 @@ export const Appointments = () => {
                             appointments.slice(0, 10).map(
                                 appointment => {
                                     return (
-                                        <AppointmentCard
-                                            appointment_date={appointment.appointment_date}
-                                            service_id={appointment.service.service_name}
-                                        />
+                                        <>
+                                            <div className="appointments">
+                                                <AppointmentCard
+                                                    appointment_date={appointment.appointment_date}
+                                                    service_id={appointment.service.service_name}
+                                                />
+                                                <CButton
+                                                    className={"CButtonDesignDeleteAppointment"}
+                                                    title={"Delete"}
+                                                    functionEmit={() => appointmentRemove(appointment.id)}
+                                                />
+                                            </div>
+                                        </>
                                     )
                                 }
                             )
