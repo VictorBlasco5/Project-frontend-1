@@ -29,9 +29,17 @@ export const Home = () => {
     return (
         <>
             <Header />
-            <div className="homeDesign">
+            <div
+                className="homeDesign"
+                style={{
+                    backgroundImage: `url(${('../../../img/screen.jpg')})`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                    width: '98.7vw',
+                    height: '100vh',
+                }}>
                 {services.length > 0 ? (
-                    <div>
+                    <div className="positionServicesCard">
                         {
                             services.slice(0, 10).map(
                                 service => {

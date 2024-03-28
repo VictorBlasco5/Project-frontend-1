@@ -32,7 +32,14 @@ export const Admin = () => {
     return (
         <>
             <Header />
-            <div className="adminDesign">
+            <div className="adminDesign"
+            style={{
+                backgroundImage: `url(${('../../../img/screen.jpg')})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                width: '100vw',
+                height: '100vh',
+            }}>
                 {users.length > 0 ? (
                     <div className="positionCards">
                         {

@@ -9,4 +9,10 @@
     align-items: center;
     justify-content: center;
     user-select: none;
+    flex-wrap: wrap;
+}
+
+.positionServicesCard {
+    display: flex;
+    flex-wrap: wrap;
 }

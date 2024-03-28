@@ -4,8 +4,8 @@ export const ServicesCard = ({service_name, description}) => {
 
     return (
         <div className="servicesCardDesign">
-            <div>{service_name}</div>
-            <div>{description}</div>
+            <div className="cardTitle">{service_name}</div>
+            <div className="card">{description}</div>
         </div>
     )
 }

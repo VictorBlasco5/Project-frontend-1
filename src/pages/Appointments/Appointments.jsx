@@ -63,11 +63,10 @@ export const Appointments = () => {
 
     const appointmentRemove = async (appointment) => {
         try {
-        const fetched = await DeleteAppointments(appointment, tokenStorage)
+            const fetched = await DeleteAppointments(appointment, tokenStorage)
         } catch (error) {
             console.log(error)
         }
-       
     }
 
 
@@ -129,11 +128,13 @@ export const Appointments = () => {
                                                     appointment_date={appointment.appointment_date}
                                                     service_id={appointment.service.service_name}
                                                 />
-                                                <CButton
+                                                <div>
+                                                <CButton 
                                                     className={"CButtonDesignDeleteAppointment"}
-                                                    title={"Delete"}
+                                                    title={ <img className="imgDeleteAppointments" src="../../../img/delete1.png" alt="Delete"/>}
                                                     functionEmit={() => appointmentRemove(appointment.id)}
                                                 />
+                                                </div>
                                             </div>
                                         </>
                                     )

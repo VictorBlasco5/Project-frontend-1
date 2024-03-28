@@ -84,7 +84,16 @@ export const Profile = () => {
     return (
         <>
             <Header />
-            <div className='profileDesign'>
+            <div className='profileDesign'
+            style={{
+                backgroundImage: `url(${('../../../img/screen.jpg')})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                width: '98.7vw',
+                height: '100vh',
+
+            }}
+            >
                 {!loadedData
                     ? (<div>LOADING</div>)
 

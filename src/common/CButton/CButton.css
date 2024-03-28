@@ -63,23 +63,26 @@
     border-radius: 0.5em;
 
     background-color: white;
-    font-weight: bold;
+     font-weight: bold;
 }
 
 .CButtonDesignCardUser:hover {
     cursor: pointer;
-    background-color: rgb(212, 63, 63);
+    background-color: rgb(243, 119, 119);
     user-select: none;
 }
 
 .CButtonDesignDeleteAppointment {
     height: 2em;
-    width: 5em;
+    width: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     border-radius: 0.5em;
     margin-top: 2em;
 
-    background-color: white;
+    background-color: lightgray;
     color: black;
     font-weight: bold;
     
@@ -87,6 +90,16 @@
 
 .CButtonDesignDeleteAppointment:hover {
     cursor: pointer;
-    background-color: rgb(212, 63, 63);
+    background-color: rgb(243, 119, 119);
     user-select: none;
+}
+
+.imgDeleteAppointments {
+    height: 1.8em;
+    width: 1.8em;
+    border-radius: 0.5em;
+}
+
+.imgDeleteAppointments:hover {
+    background-color: rgb(243, 119, 119);
 }

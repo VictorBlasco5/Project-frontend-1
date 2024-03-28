@@ -78,7 +78,14 @@ export const Register = () => {
     return (
         <>
             <Header />
-            <div className="registerDesign">
+            <div className="registerDesign"
+            style={{
+                backgroundImage: `url(${('../../../img/screen.jpg')})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                width: '98.7vw',
+                height: '100vh',
+            }}>
 
                 <CInput
                     className={`inputDesign ${userError.first_nameError !== "" ? "inputDesignError" : ""}`}
