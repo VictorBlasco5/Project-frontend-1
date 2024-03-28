@@ -17,7 +17,7 @@ export const Admin = () => {
 
                 const fetched = await GetUsers(tokenStorage)
                 setUsers(fetched.data)
-            console.log(fetched.data)
+            // console.log(fetched.data)
         }
             recoverUsers()
         }
