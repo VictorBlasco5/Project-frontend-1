@@ -32,12 +32,13 @@ export const Home = () => {
             <div
                 className="homeDesign"
                 style={{
-                    backgroundImage: `url(${('../../../img/screen.jpg')})`,
+                    backgroundImage: `url(${('../../../img/fondo5.jpg')})`,
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
                     width: '98.7vw',
-                    height: '100vh',
+                    height: '88vh',
                 }}>
+                    <div className="textName">INK-ARt</div>
                 {services.length > 0 ? (
                     <div className="positionServicesCard">
                         {

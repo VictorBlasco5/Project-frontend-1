@@ -86,11 +86,11 @@ export const Profile = () => {
             <Header />
             <div className='profileDesign'
             style={{
-                backgroundImage: `url(${('../../../img/screen.jpg')})`,
+                backgroundImage: `url(${('../../../img/fondo5.jpg')})`,
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
                 width: '98.7vw',
-                height: '100vh',
+                height: '88vh',
 
             }}
             >

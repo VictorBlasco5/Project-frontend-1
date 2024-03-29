@@ -80,11 +80,11 @@ export const Register = () => {
             <Header />
             <div className="registerDesign"
             style={{
-                backgroundImage: `url(${('../../../img/screen.jpg')})`,
+                backgroundImage: `url(${('../../../img/fondo5.jpg')})`,
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
                 width: '98.7vw',
-                height: '100vh',
+                height: '88vh',
             }}>
 
                 <CInput
