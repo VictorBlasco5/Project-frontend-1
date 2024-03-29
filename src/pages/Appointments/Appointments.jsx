@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import "./Appointments.css"
 import { Header } from "../../common/Header/Header";
-import { CreateAppointment, DeleteAppointments, GetAppointments } from "../../services/apiCalls";
+import { CreateAppointment, DeleteAppointments, GetAppointments, GetServices } from "../../services/apiCalls";
 import { CInput } from "../../common/CInput/CInput";
 import { CButton } from "../../common/CButton/CButton";
 import { AppointmentCard } from "../../common/AppointmentCard/AppointmentCard";
@@ -10,17 +10,16 @@ import remove from "../../../img/delete1.png";
 
 export const Appointments = () => {
 
-    // const [dropdown, setDropdown] = useState(false)
     const datosUser = JSON.parse(localStorage.getItem("auth"))
     const [tokenStorage, setTokenStorage] = useState(datosUser?.token)
     const [loadedData, setLoadedData] = useState(false)
     const [appointments, setAppointments] = useState([])
+    const [services, setServices] = useState([])
     const [appointmentsData, setAppointmentsData] = useState({
         appointment_date: "",
         service_id: ""
     })
 
-    const [msgSuccessfully, setMsgSuccessfully] = useState("");
 
     const appointmentInputHandler = (e) => {
         setAppointmentsData((prevState) => ({
@@ -44,25 +43,32 @@ export const Appointments = () => {
                 console.log(error);
             }
         }
-        if (!loadedData) {
-            getData()
-        }
+        getData()
     }, [appointments])
 
 
-    // const selectOption = (e) => {
-    //     setDropdown(e.target.value)
-    //     console.log("valor nombre servicio");
-    //     console.log(e.target.value);
-    // }
+    useEffect(() => {
+        if (services.length === 0) {
+            const getData = async () => {
+                try {
 
+                    const fetched = await GetServices()
+                    setServices(fetched.data)
+
+                } catch (error) {
+                    console.log(error)
+                }
+            }
+            getData()
+        }
+
+    }, [services])
 
     const newAppointment = async () => {
         try {
 
             const create = await CreateAppointment(tokenStorage, appointmentsData)
 
-            setMsgSuccessfully("Appointment created")
 
         } catch (error) {
             console.log(error);
@@ -76,8 +82,6 @@ export const Appointments = () => {
             console.log(error)
         }
     }
-
-
 
     return (
         <>
@@ -95,46 +99,38 @@ export const Appointments = () => {
 
                     <div className="appointmentsDesignLeft">
                         <CInput
-                            className={"imputAppointmentsDesign"}
-                            type={"date"}
+                            className={"imputAppointmentsDesignDate"}
+                            type={"datetime-local"}
                             placeholder={""}
                             name={"appointment_date"}
                             value={appointmentsData.appointment_date || ""}
                             disabled={""}
                             onChangeFunction={(e) => appointmentInputHandler(e)}
                         />
-                        <CInput
-                            className={"imputAppointmentsDesign"}
-                            type={"text"}
-                            placeholder={"Service number"}
-                            name={"service_id"}
-                            value={appointmentsData.service_id || ""}
-                            disabled={""}
-                            onChangeFunction={(e) => appointmentInputHandler(e)}
-                        />
-
-                        {/* intento de meterlo en un dropdown */}
-
-                        {/* <div className={"imputAppointmentsDesign"}>
-                            <select
-                                value={dropdown}
-                                onChange={selectOption}
-                            >
-                                <option value="">Select service</option>
-                                <option value={appointmentsData.service_id}>Personalized tattoo</option>
-                                <option value="opcion1">Tattoos from the catalog</option>
-                                <option value="opcion2">Restoration and rejuvenation work</option>
-                                <option value="opcion3">Placement of piercings and dilators</option>
-                                <option value="opcion3">Sales of piercings and other items</option>
-                            </select>
-                        </div> */}
-
+                        {
+                            services.length > 0 
+                                ? (
+                                    <select className="imputAppointmentsDesign" name="service_id" onChange={(e) => appointmentInputHandler(e)} >
+                                        {services.slice(0, 5).map(
+                                            service => {
+                                                return (
+                                                    <>
+                                                        <option value={`${service.id}`} >{service.service_name}</option>
+                                                    </>
+                                                )
+                                            }
+                                        )
+                                        }
+                                    </select>)
+                                : (
+                                    <p>The services are comming </p>
+                                )
+                        }
                         <CButton
                             className={"cButtonDesignAppointments"}
                             title={"New appointment"}
                             functionEmit={newAppointment}
                         />
-                        <div className="msgSuccessfully">{msgSuccessfully}</div>
                     </div>
 
                     {appointments.length > 0 ? (
