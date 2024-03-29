@@ -3,6 +3,7 @@
     overflow-y: auto;
     justify-content: center;
     flex-direction: row;
+    user-select: none;
 }
 
 .positionCards {

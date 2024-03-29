@@ -8,6 +8,8 @@
     justify-content: flex-end;
     align-items: center;
 
+    user-select: none;
+
 }
 .logo {
     height: 3em;

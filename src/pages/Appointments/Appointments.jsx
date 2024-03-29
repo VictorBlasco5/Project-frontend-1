@@ -19,6 +19,9 @@ export const Appointments = () => {
         appointment_date: "",
         service_id: ""
     })
+
+    const [msgSuccessfully, setMsgSuccessfully] = useState("");
+
     const appointmentInputHandler = (e) => {
         setAppointmentsData((prevState) => ({
             ...prevState,
@@ -58,6 +61,8 @@ export const Appointments = () => {
         try {
 
             const create = await CreateAppointment(tokenStorage, appointmentsData)
+
+            setMsgSuccessfully("Appointment created")
 
         } catch (error) {
             console.log(error);
@@ -129,6 +134,7 @@ export const Appointments = () => {
                             title={"New appointment"}
                             functionEmit={newAppointment}
                         />
+                        <div className="msgSuccessfully">{msgSuccessfully}</div>
                     </div>
 
                     {appointments.length > 0 ? (
@@ -160,9 +166,6 @@ export const Appointments = () => {
                     ) : (
                         <div></div>
                     )}
-
-
-
                 </div>
             </div>
         </>

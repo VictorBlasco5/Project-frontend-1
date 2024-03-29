@@ -3,7 +3,7 @@
     flex-direction: row;
     align-items: flex-start;
     justify-content: flex-start;
-    
+    user-select: none;
 }
 
 .appointmentsDesignLeft {
@@ -13,7 +13,6 @@
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    
 }
 
 
@@ -27,4 +26,10 @@
 .appointments {
     display: flex;
     flex-wrap: wrap;
+}
+
+.msgSuccessfully {
+    margin-top: -3em;
+    font-weight: bold;
+    color: black;
 }
