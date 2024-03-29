@@ -86,7 +86,7 @@ export const Profile = () => {
             <Header />
             <div className='profileDesign'
             style={{
-                backgroundImage: `url(${('../../../img/fondo5.jpg')})`,
+                backgroundImage: `url(${('../../../img/fondo30.jpg')})`,
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
                 width: '98.7vw',

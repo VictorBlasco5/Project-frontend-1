@@ -24,6 +24,7 @@ export const Login = () => {
   })
 
   const [msgError, setMsgError] = useState("");
+  const [msgSuccessfully, setMsgSuccessfully] = useState("");
 
   useEffect(() => {
     if (tokenStorage) {
@@ -70,7 +71,7 @@ export const Login = () => {
 
       localStorage.setItem("auth", JSON.stringify(auth))
 
-      setMsgError(`Wellcome ${decoded.firstName}`)
+      setMsgSuccessfully(`Wellcome ${decoded.firstName}`)
 
       setTimeout(() => {
         navigate("/")
@@ -86,7 +87,7 @@ export const Login = () => {
       <Header />
       <div className="loginDesign"
       style={{
-        backgroundImage: `url(${('../../../img/fondo5.jpg')})`,
+        backgroundImage: `url(${('../../../img/fondo30.jpg')})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         width: '98.7vw',
@@ -121,6 +122,8 @@ export const Login = () => {
           functionEmit={loginMe}
         />
         <div className="error">{msgError}</div>
+        <div className="successfully">{msgSuccessfully}</div>
+
       </div>
     </>
   )

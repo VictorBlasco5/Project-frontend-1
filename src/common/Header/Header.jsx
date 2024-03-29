@@ -1,6 +1,7 @@
 import { Navigator } from "../Navigator/Navigator"
 import "./Header.css"
 import { useNavigate } from "react-router-dom"
+import logo from "../../../img/logo.png";
 
 export const Header = () => {
     const auth = JSON.parse(localStorage.getItem("auth"))
@@ -24,10 +25,12 @@ export const Header = () => {
 
     return (
         <div className="headerDesign">
+           
             <Navigator title={"Home"} destination={"/"} />
 
             {auth?.token ? (
-                <div className="navBar">
+                <div className="navBar" >
+                    
                     <Navigator title={"Services"} destination={"/services"} />
                     <Navigator title={auth?.decoded?.firstName} destination={"/profile"} />
                     <div
@@ -52,6 +55,7 @@ export const Header = () => {
                     <Navigator title={"Login"} destination={"/login"} />
                 </div>
             )}
+             <img className= "logo" src={logo} alt="" />
         </div>
     )
 

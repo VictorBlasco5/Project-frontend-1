@@ -1,12 +1,12 @@
 .userCardDesign {
     height: 6em;
-    width: 15em;
+    width: 14em;
 
     display: flex;
     align-items: center;
     flex-direction: column;
 
-    background-color: lightgray;
+    background-color: white;
 
     border-radius: 0.5em;
     border: 0.1em solid black;

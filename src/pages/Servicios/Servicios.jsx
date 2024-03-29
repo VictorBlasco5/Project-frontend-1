@@ -32,7 +32,7 @@ export const Services = () => {
             <div
                 className="homeDesign"
                 style={{
-                    backgroundImage: `url(${('../../../img/fondo5.jpg')})`,
+                    backgroundImage: `url(${('../../../img/fondo30.jpg')})`,
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
                     width: '98.7vw',

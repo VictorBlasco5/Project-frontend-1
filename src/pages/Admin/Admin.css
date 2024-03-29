@@ -1,9 +1,4 @@
 .adminDesign {
-    height: 88vh;
-    width: 100vw;
-
-    background-color: rosybrown;
-
     display: flex;
     overflow-y: auto;
     justify-content: center;

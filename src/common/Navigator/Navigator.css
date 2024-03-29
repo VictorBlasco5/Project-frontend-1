@@ -1,5 +1,5 @@
 .navigatorDesign {
-    color: gray;
+    color: white;
     font-weight: bold;
 
     transition: 0.2s;
@@ -9,8 +9,7 @@
 }
 
 .navigatorDesign:hover {
-    color:black;
     cursor: pointer;
     transition: 0.2s;
-
+    transform: scale(1.15)
 }

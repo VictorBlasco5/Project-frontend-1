@@ -8,13 +8,14 @@ export const Home = () => {
             <Header />
             <div className="textName"
                 style={{
-                    backgroundImage: `url(${('../../../img/fondo5.jpg')})`,
+                    backgroundImage: `url(${('../../../img/fondo100.jpg')})`,
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
                     width: '98.7vw',
                     height: '88vh',
                 }}
-            >INK-ARt</div>
+            >
+                INK-ARt</div>
         </>
     )
 }

@@ -27,6 +27,7 @@ export const Register = () => {
     })
 
     const [msgError, setMsgError] = useState("")
+    const [msgSuccessfully, setMsgSuccessfully] = useState("");
 
     const imputHandler = (e) => {
 
@@ -40,7 +41,6 @@ export const Register = () => {
 
     const checkError = (e) => {
         const error = validation(e.target.name, e.target.value)
-        // console.log(`estoy en ${e.target.name} y voy a comprobar si ${e.target.value} es valido`)
 
         setUserError((prevState) => ({
             ...prevState,
@@ -63,7 +63,7 @@ export const Register = () => {
             const fetched = await RegisterUser(user);
 
             // console.log(fetched);
-            setMsgError(fetched.message)
+            setMsgSuccessfully(fetched.message)
 
             setTimeout(() => {
                 navigate("/")
@@ -80,7 +80,7 @@ export const Register = () => {
             <Header />
             <div className="registerDesign"
             style={{
-                backgroundImage: `url(${('../../../img/fondo5.jpg')})`,
+                backgroundImage: `url(${('../../../img/fondo30.jpg')})`,
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
                 width: '98.7vw',
@@ -133,6 +133,7 @@ export const Register = () => {
                     functionEmit={registerMe}
                 />
                 <div className="error">{msgError} </ div>
+                <div className="successfully">{msgSuccessfully} </ div>
             </div>
         </>
     )
