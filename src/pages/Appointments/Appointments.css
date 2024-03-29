@@ -2,7 +2,7 @@
     height: 88vh;
     width: 100vw;
 
-    background-color: gray;
+    /* background-color: gray; */
 
     display: flex;
     flex-direction: row;
@@ -15,7 +15,7 @@
     height: 88vh;
     width: 50vw;
 
-    background-color: gray;
+    /* background-color: gray; */
 
     display: flex;
     flex-direction: column;
@@ -29,7 +29,7 @@
     height: 88vh;
     width: 50vw;
 
-    background-color: rosybrown;
+    /* background-color: rosybrown; */
 
     display: flex;
     flex-direction: column;

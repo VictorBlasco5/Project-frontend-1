@@ -5,6 +5,7 @@ import { CreateAppointment, DeleteAppointments, GetAppointments } from "../../se
 import { CInput } from "../../common/CInput/CInput";
 import { CButton } from "../../common/CButton/CButton";
 import { AppointmentCard } from "../../common/AppointmentCard/AppointmentCard";
+import remove from "../../../img/delete1.png";
 
 
 export const Appointments = () => {
@@ -48,6 +49,8 @@ export const Appointments = () => {
 
     // const selectOption = (e) => {
     //     setDropdown(e.target.value)
+    //     console.log("valor nombre servicio");
+    //     console.log(e.target.value);
     // }
 
 
@@ -74,80 +77,93 @@ export const Appointments = () => {
     return (
         <>
             <Header />
-            <div className="appointmentsDesign">
+            <div
+                style={{
+                    backgroundImage: `url(${('../../../img/fondo5.jpg')})`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                    width: '98.7vw',
+                    height: '88vh',
+                }}
+            >
+                <div className="appointmentsDesign">
 
-                <div className="appointmentsDesignLeft">
-                    <CInput
-                        className={"imputAppointmentsDesign"}
-                        type={"date"}
-                        placeholder={""}
-                        name={"appointment_date"}
-                        value={appointmentsData.appointment_date || ""}
-                        disabled={""}
-                        onChangeFunction={(e) => appointmentInputHandler(e)}
-                    />
-                    <CInput
-                        className={"imputAppointmentsDesign"}
-                        type={"text"}
-                        placeholder={"Service number"}
-                        name={"service_id"}
-                        value={appointmentsData.service_id || ""}
-                        disabled={""}
-                        onChangeFunction={(e) => appointmentInputHandler(e)}
-                    />
+                    <div className="appointmentsDesignLeft">
+                        <CInput
+                            className={"imputAppointmentsDesign"}
+                            type={"date"}
+                            placeholder={""}
+                            name={"appointment_date"}
+                            value={appointmentsData.appointment_date || ""}
+                            disabled={""}
+                            onChangeFunction={(e) => appointmentInputHandler(e)}
+                        />
+                        <CInput
+                            className={"imputAppointmentsDesign"}
+                            type={"text"}
+                            placeholder={"Service number"}
+                            name={"service_id"}
+                            value={appointmentsData.service_id || ""}
+                            disabled={""}
+                            onChangeFunction={(e) => appointmentInputHandler(e)}
+                        />
 
-                    {/* intento de meterlo en un dropdown */}
+                        {/* intento de meterlo en un dropdown */}
 
-                    {/* <div className={"imputAppointmentsDesign"}>
-                        <select value={dropdown} onChange={selectOption}>
-                            <option value="">Select service</option>
-                            <option value={appointmentsData.service_id}>Personalized tattoo</option>
-                            <option value="opcion1">Tattoos from the catalog</option>
-                            <option value="opcion2">Restoration and rejuvenation work</option>
-                            <option value="opcion3">Placement of piercings and dilators</option>
-                            <option value="opcion3">Sales of piercings and other items</option>
-                        </select>
-                    </div> */}
+                        {/* <div className={"imputAppointmentsDesign"}>
+                            <select
+                                value={dropdown}
+                                onChange={selectOption}
+                            >
+                                <option value="">Select service</option>
+                                <option value={appointmentsData.service_id}>Personalized tattoo</option>
+                                <option value="opcion1">Tattoos from the catalog</option>
+                                <option value="opcion2">Restoration and rejuvenation work</option>
+                                <option value="opcion3">Placement of piercings and dilators</option>
+                                <option value="opcion3">Sales of piercings and other items</option>
+                            </select>
+                        </div> */}
 
-                    <CButton
-                        className={"cButtonDesignAppointments"}
-                        title={"New appointment"}
-                        functionEmit={newAppointment}
-                    />
-                </div>
-
-                {appointments.length > 0 ? (
-                    <div>
-                        {
-                            appointments.slice(0, 10).map(
-                                appointment => {
-                                    return (
-                                        <>
-                                            <div className="appointments">
-                                                <AppointmentCard
-                                                    appointment_date={appointment.appointment_date}
-                                                    service_id={appointment.service.service_name}
-                                                />
-                                                <div>
-                                                <CButton 
-                                                    className={"CButtonDesignDeleteAppointment"}
-                                                    title={ <img className="imgDeleteAppointments" src="../../../img/delete1.png" alt="Delete"/>}
-                                                    functionEmit={() => appointmentRemove(appointment.id)}
-                                                />
-                                                </div>
-                                            </div>
-                                        </>
-                                    )
-                                }
-                            )
-                        }
+                        <CButton
+                            className={"cButtonDesignAppointments"}
+                            title={"New appointment"}
+                            functionEmit={newAppointment}
+                        />
                     </div>
-                ) : (
-                    <div>You haven't appointments</div>
-                )}
+
+                    {appointments.length > 0 ? (
+                        <div>
+                            {
+                                appointments.slice(0, 10).map(
+                                    appointment => {
+                                        return (
+                                            <>
+                                                <div className="appointments">
+                                                    <AppointmentCard
+                                                        appointment_date={appointment.appointment_date}
+                                                        service_id={appointment.service.service_name}
+                                                    />
+                                                    <div>
+                                                        <CButton
+                                                            className={"CButtonDesignDeleteAppointment"}
+                                                            title={<img className="imgDeleteAppointments" src={remove} alt="Delete" />}
+                                                            functionEmit={() => appointmentRemove(appointment.id)}
+                                                        />
+                                                    </div>
+                                                </div>
+                                            </>
+                                        )
+                                    }
+                                )
+                            }
+                        </div>
+                    ) : (
+                        <div>You haven't appointments</div>
+                    )}
 
 
 
+                </div>
             </div>
         </>
     )

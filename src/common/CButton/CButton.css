@@ -90,7 +90,7 @@
 
 .CButtonDesignDeleteAppointment:hover {
     cursor: pointer;
-    background-color: rgb(243, 119, 119);
+    background-color:rgb(241, 227, 146);
     user-select: none;
 }
 
@@ -101,5 +101,5 @@
 }
 
 .imgDeleteAppointments:hover {
-    background-color: rgb(243, 119, 119);
+    background-color: rgb(241, 227, 146);
 }

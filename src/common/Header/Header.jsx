@@ -28,7 +28,7 @@ export const Header = () => {
 
             {auth?.token ? (
                 <div className="navBar">
-    
+                    <Navigator title={"Services"} destination={"/services"} />
                     <Navigator title={auth?.decoded?.firstName} destination={"/profile"} />
                     <div
                         onClick={appointments}> <Navigator title={"Appointments"} destination={"/appointments"} />
@@ -47,6 +47,7 @@ export const Header = () => {
                 </div>
             ) : (
                 <div className="navBar">
+                    <Navigator title={"Services"} destination={"/services"} />
                     <Navigator title={"Register"} destination={"/register"} />
                     <Navigator title={"Login"} destination={"/login"} />
                 </div>

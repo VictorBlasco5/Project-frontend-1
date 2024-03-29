@@ -1,0 +1,14 @@
+.servicesDesign {
+    
+        height: 88vh;
+        width: 98vw; 
+    
+        background-color: rosybrown;
+    
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        overflow-x:hidden ;
+    }
+    
