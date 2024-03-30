@@ -30,7 +30,7 @@ export const Services = () => {
         <>
             <Header />
             <div
-                className="homeDesign"
+                className="servicesDesign"
                 style={{
                     backgroundImage: `url(${('../../../img/fondo30.jpg')})`,
                     backgroundSize: 'cover',
@@ -54,7 +54,7 @@ export const Services = () => {
                         }
                     </div>
                 ) : (
-                    <div>Los servicios están viniendo</div>
+                    <div>The services are comming</div>
                 )}
             </div>
         </>

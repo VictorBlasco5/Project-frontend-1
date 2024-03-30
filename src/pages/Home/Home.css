@@ -7,19 +7,40 @@
     flex-wrap: wrap;
 }
 
-.positionServicesCard {
-    display: flex;
-    flex-wrap: wrap;
-}
-
 .textName {
-    font-size: 5em;
-    font-weight: bold;
-    color: rgb(185, 50, 9);
-
     display: flex;
     align-items: flex-start;
     justify-content: center;
     flex-direction: row;
+    
+    font-size: 5em;
+    font-family: "Lora", serif;
+    font-weight: bold;
+    color: black;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: white;
 }
 
+.positionImg {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.images {
+    height: 20em;
+    width: 15em;
+    
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+
+    border-radius: 0.5em;
+
+    margin: 1em;
+    filter: grayscale();
+}
+
+.images:hover {
+    filter: none;
+    cursor: pointer;
+}
