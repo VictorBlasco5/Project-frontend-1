@@ -36,8 +36,6 @@ export const Appointments = () => {
                 const fetched = await GetAppointments(tokenStorage)
                 setAppointments(fetched.data.appointment)
                 setLoadedData(true)
-                // console.log(fetched.data)
-                // console.log(appointments)
 
             } catch (error) {
                 console.log(error);
@@ -110,8 +108,11 @@ export const Appointments = () => {
                         {
                             services.length > 0 
                                 ? (
-                                    <select className="imputAppointmentsDesign" name="service_id" onChange={(e) => appointmentInputHandler(e)} >
-                                        {services.slice(0, 5).map(
+                                    <select className="imputAppointmentsDesign" name="service_id" onChange={(e) => appointmentInputHandler(e)} defaultValue={""} >
+                                        <option value= "" disabled> 
+                                            Select service
+                                        </option>
+                                        {services.map(
                                             service => {
                                                 return (
                                                     <>
@@ -123,7 +124,7 @@ export const Appointments = () => {
                                         }
                                     </select>)
                                 : (
-                                    <p>The services are comming </p>
+                                    <p>LOADING </p>
                                 )
                         }
                         <CButton

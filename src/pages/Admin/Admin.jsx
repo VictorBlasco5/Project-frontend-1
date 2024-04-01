@@ -13,19 +13,26 @@ export const Admin = () => {
     useEffect(() => {
         if (users.length === 0) {
             const recoverUsers = async () => {
+                try {
 
-                const fetched = await GetUsers(tokenStorage)
-                setUsers(fetched.data)
-                // console.log(fetched.data)
+                    const fetched = await GetUsers(tokenStorage)
+                    setUsers(fetched.data)
+                } catch (error) {
+                    console.log(error);
+                }
             }
             recoverUsers()
         }
     }, [users])
 
+    
     const userRemove = async (userId) => {
-
-        const fetched = await DeleteUsers(userId, tokenStorage)
-
+        try {
+            const fetched = await DeleteUsers(userId, tokenStorage)
+            
+        } catch (error) {
+            console.log(error)
+        }
     }
 
 
@@ -67,7 +74,7 @@ export const Admin = () => {
                         }
                     </div>
                 ) : (
-                    <div>You haven't users</div>
+                    <div>LOADING</div>
                 )}
             </div>
         </>
