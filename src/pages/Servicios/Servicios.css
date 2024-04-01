@@ -1,0 +1,9 @@
+.servicesDesign {
+    display: flex;
+    align-items: center;
+}
+
+.positionServicesCard {
+    display: flex;
+    flex-wrap: wrap;
+}

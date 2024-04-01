@@ -1,0 +1,57 @@
+.inputDesign {
+    height: 3em;
+    width: 15em;
+
+    border: 0.2em solid black;
+    border-radius: 0.5em;
+    margin: 1em;
+
+    display: flex;
+    flex-direction: column;
+    color: black;
+    background-color:white
+}
+
+.inputDesignError {
+    border: 0.2em solid red;
+}
+
+.imputAppointmentsDesignDate {
+    height: 3em;
+    width: 17.5em;
+
+    border-radius: 0.5em;
+
+    display: flex;
+    justify-content: center;
+    
+    margin-top: 10em;
+}
+
+.imputAppointmentsDesign {
+    height: 3.2em;
+    width: 18em;
+
+    border-radius: 0.5em;
+    border-color: black;
+    border-width: 0.2em;
+
+
+    display: flex;
+    justify-content: center;
+    
+    margin-top: 3em;
+}
+
+.inputDesignServices {
+    height: 5em;
+    width: 30em;
+
+    border: 0.1em solid black;
+    border-radius: 0.3em;
+    margin: 1em;
+
+    display: flex;
+    flex-direction: column;
+    
+}

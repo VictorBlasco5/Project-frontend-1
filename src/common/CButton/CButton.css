@@ -1,0 +1,111 @@
+.cButtonDesign {
+    height: 3em;
+    width: 13em;
+    margin: 1em;
+
+    border-radius: 0.5em;
+
+    background-color: black;
+    color: white;
+    font-weight: bold;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    user-select: none;
+}
+
+.cButtonDesign:hover {
+    cursor: pointer;
+    transition: 0.2s;
+    background-color: rgb(63, 62, 62);
+}
+
+.cButtonDesignAppointments {
+    height: 3em;
+    width: 12em;
+    margin: 5em;
+
+    border-radius: 0.5em;
+
+    background-color: black;
+    color: white;
+    font-weight: bold;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 2.6em;
+
+    user-select: none;
+    
+}
+
+.cButtonDesignAppointments:hover {
+    cursor: pointer;
+    background-color: rgb(63, 62, 62);
+    transition: 0.3s;
+
+}
+
+.CButtonDesignCardUser {
+    height: 2.5em;
+    width: 12em;
+
+    margin: 1em;
+    margin-left: 0.6em;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    border-radius: 0.5em;
+
+    background-color: black;
+    font-weight: bold;
+    color: white;
+}
+
+.CButtonDesignCardUser:hover {
+    cursor: pointer;
+    background-color:rgb(63, 62, 62);
+    user-select: none;
+    transition: 0.3s;
+}
+
+.CButtonDesignDeleteAppointment {
+    height: 2em;
+    width: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 0.5em;
+    margin-top: 2em;
+
+    background-color: rgba(211, 211, 211, 0);
+    color: black;
+    font-weight: bold;
+    
+}
+
+.CButtonDesignDeleteAppointment:hover {
+    cursor: pointer;
+    user-select: none;
+    transition: 0.3s;
+}
+
+.imgDeleteAppointments {
+    height: 1.5em;
+    width: 1.5em;
+    border-radius: 0.5em;
+}
+
+.imgDeleteAppointments:hover {
+    transition: 0.3s;
+    transform: scale(1.30)
+
+}

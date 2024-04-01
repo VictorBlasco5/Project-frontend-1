@@ -1,0 +1,13 @@
+.adminDesign {
+    display: flex;
+    overflow-y: auto;
+    justify-content: center;
+    flex-direction: row;
+    user-select: none;
+}
+
+.positionCards {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 1em;
+}

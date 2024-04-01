@@ -1,0 +1,46 @@
+.homeDesign {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    flex-wrap: wrap;
+}
+
+.textName {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: row;
+    
+    font-size: 5em;
+    font-family: "Lora", serif;
+    font-weight: bold;
+    color: black;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: white;
+}
+
+.positionImg {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.images {
+    height: 20em;
+    width: 15em;
+    
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+
+    border-radius: 0.5em;
+
+    margin: 1em;
+    filter: grayscale();
+}
+
+.images:hover {
+    filter: none;
+    cursor: pointer;
+}
