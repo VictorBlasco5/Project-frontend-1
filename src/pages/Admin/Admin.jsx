@@ -25,11 +25,13 @@ export const Admin = () => {
         }
     }, [users])
 
-    
+
     const userRemove = async (userId) => {
         try {
-            const fetched = await DeleteUsers(userId, tokenStorage)
-            
+            await DeleteUsers(userId, tokenStorage)
+            const updatedUsers = await GetUsers(tokenStorage);
+            setUsers(updatedUsers.data);
+
         } catch (error) {
             console.log(error)
         }
@@ -40,13 +42,13 @@ export const Admin = () => {
         <>
             <Header />
             <div className="adminDesign"
-            style={{
-                backgroundImage: `url(${('../../../img/fondo30.jpg')})`,
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-                width: '98.7vw',
-                height: '88vh',
-            }}>
+                style={{
+                    backgroundImage: `url(${('../../../img/fondo30.jpg')})`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                    width: '98.7vw',
+                    height: '88vh',
+                }}>
                 {users.length > 0 ? (
                     <div className="positionCards">
                         {
