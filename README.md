@@ -33,7 +33,7 @@ Bienvenido a la documentación de la web de mi estudio de tatuajes. Es mi sexto 
 
 - Disponemos de imagenes de tatuajes realizados a clientes.
 
-![Barra navegación](./img/home.jpg)
+![Home](./img/home.jpg)
 
 </details>
 
@@ -43,7 +43,7 @@ Bienvenido a la documentación de la web de mi estudio de tatuajes. Es mi sexto 
 
 - Encontramos todos nuestros servicios.
 
-![Barra navegación](./img/services.jpg)
+![Services](./img/services.jpg)
 
 </details>
 
@@ -51,7 +51,7 @@ Bienvenido a la documentación de la web de mi estudio de tatuajes. Es mi sexto 
 <details>
 <summary>Register</summary>
 
-![Barra navegación](./img/register.jpg)
+![Register](./img/register.jpg)
 
 </details>
 
@@ -59,7 +59,7 @@ Bienvenido a la documentación de la web de mi estudio de tatuajes. Es mi sexto 
 <details>
 <summary>Login</summary>
 
-![Barra navegación](./img/login.jpg)
+![Login](./img/login.jpg)
 
 </details>
 
@@ -68,7 +68,7 @@ Bienvenido a la documentación de la web de mi estudio de tatuajes. Es mi sexto 
 
 - Aparecerá indicado en la barra de navegación con el nombre que se registre cada usuario.
 
-![Barra navegación](./img/profile.jpg)
+![Profile](./img/profile.jpg)
 
 </details>
 
@@ -78,15 +78,15 @@ Bienvenido a la documentación de la web de mi estudio de tatuajes. Es mi sexto 
 
 - El usuario podrá ver sus citas pendientes.
 
-![Barra navegación](./img/appointments.jpg)
+![Appointments](./img/appointments.jpg)
 
  - Solicitar una nueva.
 
-![Barra navegación](./img/dropdown.jpg)
+![Dropdown](./img/dropdown.jpg)
 
 - Eliminarlas.
 
-![Barra navegación](./img/deleteAppointment.jpg)
+![Delete appointment](./img/deleteAppointment.jpg)
 
 </details>
 
@@ -97,7 +97,7 @@ Bienvenido a la documentación de la web de mi estudio de tatuajes. Es mi sexto 
 
 - El administrador tendrá acceso a todos los usuarios registrados y podrá eliminarlos si fuera necesario.
 
-![Barra navegación](./img/admin.jpg)
+![Admin](./img/admin.jpg)
 
 </details>
 
