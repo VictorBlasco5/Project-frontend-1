@@ -18,7 +18,7 @@ export const Home = () => {
                     width: '100vw',
                     height: '88vh',
                 }}
-                >
+            >
                 <div className="textName">
                     INK-ARt
                 </div>
@@ -27,9 +27,7 @@ export const Home = () => {
                     <img className="images" src={tattoo3} alt="Tattoo3" />
                     <img className="images" src={tattoo4} alt="Tattoo5" />
                     <img className="images" src={tattoo5} alt="Tattoo5" />
-
                 </div>
-
             </div>
         </>
     )

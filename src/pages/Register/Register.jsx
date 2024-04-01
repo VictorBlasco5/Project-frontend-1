@@ -7,11 +7,9 @@ import { validation } from "../../utils/functions";
 import { useNavigate } from "react-router-dom";
 import { Header } from "../../common/Header/Header";
 
-
 export const Register = () => {
 
     const navigate = useNavigate()
-
     const [user, setUser] = useState({
         first_name: "",
         last_name: "",
@@ -30,7 +28,6 @@ export const Register = () => {
     const [msgSuccessfully, setMsgSuccessfully] = useState("");
 
     const imputHandler = (e) => {
-
         setUser(
             (prevState) => ({
                 ...prevState,
@@ -48,7 +45,6 @@ export const Register = () => {
         }))
     }
 
-
     const registerMe = async () => {
 
         try {
@@ -62,7 +58,6 @@ export const Register = () => {
 
             const fetched = await RegisterUser(user);
 
-            // console.log(fetched);
             setMsgSuccessfully(fetched.message)
 
             setTimeout(() => {
@@ -79,14 +74,13 @@ export const Register = () => {
         <>
             <Header />
             <div className="registerDesign"
-            style={{
-                backgroundImage: `url(${('../../../img/fondo30.jpg')})`,
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-                width: '100vw',
-                height: '88vh',
-            }}>
-
+                style={{
+                    backgroundImage: `url(${('../../../img/fondo30.jpg')})`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                    width: '100vw',
+                    height: '88vh',
+                }}>
                 <CInput
                     className={`inputDesign ${userError.first_nameError !== "" ? "inputDesignError" : ""}`}
                     placeholder={"First name"}

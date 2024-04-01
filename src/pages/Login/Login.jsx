@@ -12,7 +12,6 @@ export const Login = () => {
   const datosUser = JSON.parse(localStorage.getItem("auth"));
   const navigate = useNavigate();
   const [tokenStorage, setTokenStorage] = useState(datosUser?.token);
-
   const [accreditation, setAccreditation] = useState({
     email: "",
     password_hash: "",
@@ -57,12 +56,8 @@ export const Login = () => {
       }
 
       const fetched = await LoginUser(accreditation);
-      // console.log("fetched");
-      // console.log(fetched);
 
       const decoded = decodeToken(fetched.token)
-      // console.log("decoded");
-      // console.log(decoded);
 
       const auth = {
         token: fetched.token,
@@ -86,13 +81,13 @@ export const Login = () => {
     <>
       <Header />
       <div className="loginDesign"
-      style={{
-        backgroundImage: `url(${('../../../img/fondo30.jpg')})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        width: '100vw',
-        height: '88vh',
-    }}
+        style={{
+          backgroundImage: `url(${('../../../img/fondo30.jpg')})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          width: '100vw',
+          height: '88vh',
+        }}
       >
         <CInput
           className={`inputDesign ${accreditationError.emailError !== "" ? "inputDesignError" : ""}`}
@@ -123,7 +118,6 @@ export const Login = () => {
         />
         <div className="error">{msgError}</div>
         <div className="successfully">{msgSuccessfully}</div>
-
       </div>
     </>
   )

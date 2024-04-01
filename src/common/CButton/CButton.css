@@ -41,14 +41,12 @@
     margin-top: 2.6em;
 
     user-select: none;
-    
 }
 
 .cButtonDesignAppointments:hover {
     cursor: pointer;
     background-color: rgb(63, 62, 62);
     transition: 0.3s;
-
 }
 
 .CButtonDesignCardUser {
@@ -89,7 +87,6 @@
     background-color: rgba(211, 211, 211, 0);
     color: black;
     font-weight: bold;
-    
 }
 
 .CButtonDesignDeleteAppointment:hover {
@@ -107,5 +104,4 @@
 .imgDeleteAppointments:hover {
     transition: 0.3s;
     transform: scale(1.30)
-
 }

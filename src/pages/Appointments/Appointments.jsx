@@ -7,7 +7,6 @@ import { CButton } from "../../common/CButton/CButton";
 import { AppointmentCard } from "../../common/AppointmentCard/AppointmentCard";
 import remove from "../../../img/delete1.png";
 
-
 export const Appointments = () => {
 
     const datosUser = JSON.parse(localStorage.getItem("auth"))
@@ -19,7 +18,6 @@ export const Appointments = () => {
         appointment_date: "",
         service_id: ""
     })
-
 
     const appointmentInputHandler = (e) => {
         setAppointmentsData((prevState) => ({
@@ -44,7 +42,6 @@ export const Appointments = () => {
         getData()
     }, [appointments])
 
-
     useEffect(() => {
         if (services.length === 0) {
             const getData = async () => {
@@ -65,8 +62,7 @@ export const Appointments = () => {
     const newAppointment = async () => {
         try {
 
-            const create = await CreateAppointment(tokenStorage, appointmentsData)
-
+        await CreateAppointment(tokenStorage, appointmentsData)
 
         } catch (error) {
             console.log(error);
@@ -107,10 +103,10 @@ export const Appointments = () => {
                             onChangeFunction={(e) => appointmentInputHandler(e)}
                         />
                         {
-                            services.length > 0 
+                            services.length > 0
                                 ? (
                                     <select className="imputAppointmentsDesign" name="service_id" onChange={(e) => appointmentInputHandler(e)} defaultValue={""} >
-                                        <option value= "" disabled> 
+                                        <option value="" disabled>
                                             Select service
                                         </option>
                                         {services.map(

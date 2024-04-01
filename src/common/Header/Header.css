@@ -9,15 +9,14 @@
     align-items: center;
 
     user-select: none;
-
 }
+
 .logo {
     height: 4em;
     width: 4em;
-    
 }
+
 .navBar {
     display: flex;
     flex-direction: row;
 }
-

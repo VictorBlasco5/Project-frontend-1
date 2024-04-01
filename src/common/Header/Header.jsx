@@ -8,14 +8,12 @@ export const Header = () => {
     const navigate = useNavigate();
 
     const logOut = () => {
-        
+
         localStorage.removeItem("auth")
         navigate("/login");
-
     }
 
     const appointments = () => {
-
         navigate("/appointments")
     }
 
@@ -25,12 +23,12 @@ export const Header = () => {
 
     return (
         <div className="headerDesign">
-           
+
             <Navigator title={"Home"} destination={"/"} />
 
             {auth?.token ? (
                 <div className="navBar" >
-                    
+
                     <Navigator title={"Services"} destination={"/services"} />
                     <Navigator title={auth?.decoded?.firstName} destination={"/profile"} />
                     <div
@@ -55,8 +53,7 @@ export const Header = () => {
                     <Navigator title={"Login"} destination={"/login"} />
                 </div>
             )}
-             <img className= "logo" src={logo} alt="" />
+            <img className="logo" src={logo} alt="" />
         </div>
     )
-
 }

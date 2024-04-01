@@ -15,7 +15,6 @@ export const Services = () => {
                     const fetched = await GetServices()
 
                     setServices(fetched.data)
-                    // console.log(fetched.data);
 
                 } catch (error) {
                     console.log(error);
@@ -23,7 +22,6 @@ export const Services = () => {
             }
             getAllServices()
         }
-
     }, [services])
 
     return (

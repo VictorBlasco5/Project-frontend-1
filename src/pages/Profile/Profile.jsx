@@ -6,7 +6,6 @@ import { CInput } from "../../common/CInput/CInput";
 import { Header } from "../../common/Header/Header";
 import { CButton } from "../../common/CButton/CButton";
 
-
 export const Profile = () => {
     const datosUser = JSON.parse(localStorage.getItem("auth"))
     const navigate = useNavigate()
@@ -57,7 +56,6 @@ export const Profile = () => {
                     email: fetched.data.email,
                 })
 
-
             } catch (error) {
                 console.log(error)
             }
@@ -75,7 +73,6 @@ export const Profile = () => {
 
             setChange("disabled")
 
-            // console.log(fetched);
         } catch (error) {
             console.log(error);
         }
@@ -85,14 +82,13 @@ export const Profile = () => {
         <>
             <Header />
             <div className='profileDesign'
-            style={{
-                backgroundImage: `url(${('../../../img/fondo30.jpg')})`,
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-                width: '100vw',
-                height: '88vh',
-
-            }}
+                style={{
+                    backgroundImage: `url(${('../../../img/fondo30.jpg')})`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                    width: '100vw',
+                    height: '88vh',
+                }}
             >
                 {!loadedData
                     ? (<div>LOADING</div>)
@@ -137,5 +133,4 @@ export const Profile = () => {
             </div>
         </>
     )
-
 }

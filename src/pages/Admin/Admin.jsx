@@ -17,6 +17,7 @@ export const Admin = () => {
 
                     const fetched = await GetUsers(tokenStorage)
                     setUsers(fetched.data)
+
                 } catch (error) {
                     console.log(error);
                 }
@@ -24,7 +25,6 @@ export const Admin = () => {
             recoverUsers()
         }
     }, [users])
-
 
     const userRemove = async (userId) => {
         try {
@@ -36,7 +36,6 @@ export const Admin = () => {
             console.log(error)
         }
     }
-
 
     return (
         <>
