@@ -90,7 +90,7 @@ export const Login = () => {
         backgroundImage: `url(${('../../../img/fondo30.jpg')})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
-        width: '98.7vw',
+        width: '100vw',
         height: '88vh',
     }}
       >
