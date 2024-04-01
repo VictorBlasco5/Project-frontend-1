@@ -1,4 +1,4 @@
-# Web Tattoo Studio :black_nib:
+# INK-ARt
 Bienvenido a la documentación de la web de mi estudio de tatuajes. Es mi sexto proyecto desarrollado en GeeksHubs Academy en el cual se ponen en práctica habilidades de desarrollo frontend con React.
 
 ![Home](./img/home.jpg)
@@ -18,8 +18,7 @@ Bienvenido a la documentación de la web de mi estudio de tatuajes. Es mi sexto 
 <img src="https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB" alt="React" /> <img src="https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white" alt="React" /> <img src="https://img.shields.io/badge/JavaScript-E5E104?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript" /> <img src="https://img.shields.io/badge/CSS3-0040FF?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3" /> <img src="https://img.shields.io/badge/-Vite-747bff?style=for-the-badge&logo=vite&logoColor=white"> 
 
 
-### Características
-
+### Características	:label:
 **Barra de navegación**
 
 ![Barra navegación](./img/navBar.jpg)
@@ -137,7 +136,7 @@ Email: laura@blasco.com
 Contraseña: Aa12345
 ````
 
-### Futuras funcionalidades
+### Futuras funcionalidades:rocket:
 
 - Modificar usuario siendo administrador.
 - Acceso a las citas de cualquier usuario siendo administrador.
