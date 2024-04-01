@@ -1,6 +1,8 @@
 # Web Tattoo Studio :black_nib:
 Bienvenido a la documentación de la web de mi estudio de tatuajes. Es mi sexto proyecto desarrollado en GeeksHubs Academy en el cual se ponen en práctica habilidades de desarrollo frontend con React.
 
+![Home](./img/home.jpg)
+
 ## Tabla de contenido :page_with_curl:
 
 - [Tecnologías.](#tecnologías-star2)
